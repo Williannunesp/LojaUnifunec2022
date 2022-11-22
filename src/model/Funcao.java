@@ -18,39 +18,39 @@ import javax.persistence.Table;
  * @author willi
  */
 @Entity
-@Table (name = "bairro")
-public class Bairro implements Serializable{
+@Table(name = "funcao")
+public class Funcao  implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer codbairro;
+    private Integer codfuncao;
     
     @Column
-    private String nomebairro;
+    private String nomefuncao;
 
-    public Bairro() {
+    public Funcao() {
     }
     
     
-    
-    public Integer getCodbairro() {
-        return codbairro;
+
+    public Integer getCodfuncao() {
+        return codfuncao;
     }
 
-    public void setCodbairro(Integer codbairro) {
-        this.codbairro = codbairro;
+    public void setCodfuncao(Integer codfuncao) {
+        this.codfuncao = codfuncao;
     }
 
-    public String getNomebairro() {
-        return nomebairro;
+    public String getNomefuncao() {
+        return nomefuncao;
     }
 
-    public void setNomebairro(String nomebairro) {
-        this.nomebairro = nomebairro;
+    public void setNomefuncao(String nomefuncao) {
+        this.nomefuncao = nomefuncao;
     }
 
     @Override
     public String toString() {
-        return  nomebairro;
+        return  nomefuncao;
     }
     
     

@@ -18,40 +18,50 @@ import javax.persistence.Table;
  * @author willi
  */
 @Entity
-@Table (name = "bairro")
-public class Bairro implements Serializable{
+@Table(name = "uf")
+public class Uf implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer codbairro;
+    private Integer coduf;
     
     @Column
-    private String nomebairro;
+    private String nomeuf;
+    
+    @Column
+    private String sigla;
 
-    public Bairro() {
+    public Uf() {
     }
     
     
-    
-    public Integer getCodbairro() {
-        return codbairro;
+
+    public Integer getCoduf() {
+        return coduf;
     }
 
-    public void setCodbairro(Integer codbairro) {
-        this.codbairro = codbairro;
+    public void setCoduf(Integer coduf) {
+        this.coduf = coduf;
     }
 
-    public String getNomebairro() {
-        return nomebairro;
+    public String getNomeuf() {
+        return nomeuf;
     }
 
-    public void setNomebairro(String nomebairro) {
-        this.nomebairro = nomebairro;
+    public void setNomeuf(String nomeuf) {
+        this.nomeuf = nomeuf;
+    }
+
+    public String getSigla() {
+        return sigla;
+    }
+
+    public void setSigla(String sigla) {
+        this.sigla = sigla;
     }
 
     @Override
     public String toString() {
-        return  nomebairro;
+        return nomeuf + sigla;
     }
-    
     
 }
