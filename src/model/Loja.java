@@ -28,7 +28,7 @@ public class Loja implements Serializable{
     private String cnpj;
     
     @Column
-    private String nomefantazia;
+    private String nomefantasia;
     
     @Column
     private String razaosocial;
@@ -54,12 +54,12 @@ public class Loja implements Serializable{
         this.cnpj = cnpj;
     }
 
-    public String getNomefantazia() {
-        return nomefantazia;
+    public String getNomefantasia() {
+        return nomefantasia;
     }
 
-    public void setNomefantazia(String nomefantazia) {
-        this.nomefantazia = nomefantazia;
+    public void setNomefantasia(String nomefantasia) {
+        this.nomefantasia = nomefantasia;
     }
 
     public String getRazaosocial() {
@@ -72,7 +72,7 @@ public class Loja implements Serializable{
 
     @Override
     public String toString() {
-        return cnpj + nomefantazia + razaosocial;
+        return cnpj + nomefantasia + razaosocial;
     }
     
     

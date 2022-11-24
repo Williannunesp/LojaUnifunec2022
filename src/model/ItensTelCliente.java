@@ -16,21 +16,25 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "itenstelcliente")
-public class itensTelCliente implements Serializable{
+public class ItensTelCliente implements Serializable{
     
     @EmbeddedId
-    private ItensTelClienteID itensClienteID;
+    private ItensTelClienteID itensTelClienteID;
 
-    public itensTelCliente() {
+    public ItensTelCliente() {
     }
 
-    public ItensTelClienteID getItensClienteID() {
-        return itensClienteID;
+    public ItensTelClienteID getItensTelClienteID() {
+        return itensTelClienteID;
     }
 
-    public void setItensClienteID(ItensTelClienteID itensClienteID) {
-        this.itensClienteID = itensClienteID;
+    public void setItensTelClienteID(ItensTelClienteID itensTelClienteID) {
+        this.itensTelClienteID = itensTelClienteID;
     }
+
+   
+
+    
     
     
 }

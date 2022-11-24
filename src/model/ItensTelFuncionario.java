@@ -18,19 +18,20 @@ import javax.persistence.Table;
 @Table(name = "itenstelfuncionario")
 public class ItensTelFuncionario  implements Serializable{
     @EmbeddedId
-    private ItensTelFuncionarioID itensTelFuncionario;
+    private ItensTelFuncionarioID itensTelFuncionarioID;
 
     public ItensTelFuncionario() {
     }
 
-    public ItensTelFuncionarioID getItensTelFuncionario() {
-        return itensTelFuncionario;
+    public ItensTelFuncionarioID getItensTelFuncionarioID() {
+        return itensTelFuncionarioID;
     }
 
-    public void setItensTelFuncionario(ItensTelFuncionarioID itensTelFuncionario) {
-        this.itensTelFuncionario = itensTelFuncionario;
+    public void setItensTelFuncionarioID(ItensTelFuncionarioID itensTelFuncionarioID) {
+        this.itensTelFuncionarioID = itensTelFuncionarioID;
     }
-    
+
+   
     
     
 }
