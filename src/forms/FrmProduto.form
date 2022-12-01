@@ -308,6 +308,11 @@
                           <Editor/>
                           <Renderer/>
                         </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
                       </TableColumnModel>
                     </Property>
                     <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -316,17 +321,21 @@
                   </Properties>
                   <BindingProperties>
                     <BindingProperty name="elements" source="listProduto" target="jTable1" targetPath="elements" updateStrategy="0" immediately="true">
-                      <Subbinding sourcePath="${codfuncionario}">
+                      <Subbinding sourcePath="${codproduto}">
                         <BindingParameter name="NAME" value="C&#xf3;digo"/>
                         <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
                       </Subbinding>
-                      <Subbinding sourcePath="${nomefuncionario}">
-                        <BindingParameter name="NAME" value="Funcion&#xe1;rio"/>
+                      <Subbinding sourcePath="${nomeproduto}">
+                        <BindingParameter name="NAME" value="Produto"/>
                         <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
                       </Subbinding>
-                      <Subbinding sourcePath="${salario}">
-                        <BindingParameter name="NAME" value="Sal&#xe1;rio"/>
-                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="String.class"/>
+                      <Subbinding sourcePath="${quantidade}">
+                        <BindingParameter name="NAME" value="Quantidade"/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Integer.class"/>
+                      </Subbinding>
+                      <Subbinding sourcePath="${valor}">
+                        <BindingParameter name="NAME" value="Valor"/>
+                        <BindingParameter name="javax.swing.binding.ParameterKeys.COLUMN_CLASS" value="Double.class"/>
                       </Subbinding>
                     </BindingProperty>
                   </BindingProperties>
@@ -357,14 +366,11 @@
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace pref="23" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="lblCodigo" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
+                                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
                                       <Component id="jTextField1" min="-2" pref="132" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
@@ -372,8 +378,10 @@
                                       <Component id="jTextField5" min="-2" pref="48" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" attributes="0">
-                                      <Component id="txtCodigo" min="-2" pref="63" max="-2" attributes="0"/>
+                                      <Component id="lblCodigo" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="txtCodigo" min="-2" pref="118" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="lblPosicao" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jTextField4" min="-2" pref="312" max="-2" attributes="0"/>
@@ -516,7 +524,7 @@
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <BindingProperties>
-                <BindingProperty name="text" source="jTable1" sourcePath="${selectedElement.codfuncionario}" target="txtCodigo" targetPath="text" updateStrategy="0" immediately="false">
+                <BindingProperty name="text" source="jTable1" sourcePath="${selectedElement.codproduto}" target="txtCodigo" targetPath="text" updateStrategy="0" immediately="false">
                   <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
                 </BindingProperty>
               </BindingProperties>
@@ -528,14 +536,14 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField1">
               <BindingProperties>
-                <BindingProperty name="text" source="jTable1" sourcePath="${selectedElement.salario}" target="jTextField1" targetPath="text" updateStrategy="0" immediately="false">
+                <BindingProperty name="text" source="jTable1" sourcePath="${selectedElement.quantidade}" target="jTextField1" targetPath="text" updateStrategy="0" immediately="false">
                   <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
                 </BindingProperty>
               </BindingProperties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField4">
               <BindingProperties>
-                <BindingProperty name="text" source="jTable1" sourcePath="${selectedElement.nomefuncionario}" target="jTextField4" targetPath="text" updateStrategy="0" immediately="false">
+                <BindingProperty name="text" source="jTable1" sourcePath="${selectedElement.nomeproduto}" target="jTextField4" targetPath="text" updateStrategy="0" immediately="false">
                   <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
                 </BindingProperty>
               </BindingProperties>
@@ -548,7 +556,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox4">
               <BindingProperties>
                 <BindingProperty name="elements" source="listMarca" target="jComboBox4" targetPath="elements" updateStrategy="0" immediately="false"/>
-                <BindingProperty name="selectedItem" source="jTable1" sourcePath="${selectedElement.rua}" target="jComboBox4" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+                <BindingProperty name="selectedItem" source="jTable1" sourcePath="${selectedElement.marca}" target="jComboBox4" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
               </BindingProperties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -561,7 +569,7 @@
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField5">
               <BindingProperties>
-                <BindingProperty name="text" source="jTable1" sourcePath="${selectedElement.numerocasa}" target="jTextField5" targetPath="text" updateStrategy="0" immediately="false">
+                <BindingProperty name="text" source="jTable1" sourcePath="${selectedElement.valor}" target="jTextField5" targetPath="text" updateStrategy="0" immediately="false">
                   <BindingParameter name="javax.swing.binding.ParameterKeys.TEXT_CHANGE_STRATEGY" value="javax.swing.binding.TextChangeStrategy.ON_TYPE"/>
                 </BindingProperty>
               </BindingProperties>
@@ -574,7 +582,7 @@
             <Component class="javax.swing.JComboBox" name="jComboBox6">
               <BindingProperties>
                 <BindingProperty name="elements" source="listtipo" target="jComboBox6" targetPath="elements" updateStrategy="0" immediately="false"/>
-                <BindingProperty name="selectedItem" source="jTable1" sourcePath="${selectedElement.bairro}" target="jComboBox6" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
+                <BindingProperty name="selectedItem" source="jTable1" sourcePath="${selectedElement.tipo}" target="jComboBox6" targetPath="selectedItem" updateStrategy="0" immediately="false"/>
               </BindingProperties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
